@@ -1,0 +1,8 @@
+# Do not add public keys to repository
+*.pub
+
+# Ignore Packer Cache
+packer_cache
+
+# Ignore build results
+build
