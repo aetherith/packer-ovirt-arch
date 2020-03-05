@@ -2,7 +2,7 @@
 - name: Create default user.
   shell: >
     /usr/bin/arch-chroot {{ arch_bootstrap_root_mount_point }}
-    useradd --password {{ 'password' | password_hash('sha512') | quote }} --comment 'Default Cloud User' --create-home --user-group {{ arch_bootstrap_default_user }}
+    useradd --comment 'Default Cloud User' --create-home --user-group {{ arch_bootstrap_default_user }}
 - name: Get default user home directory.
   shell: >
     /usr/bin/arch-chroot {{ arch_bootstrap_root_mount_point }}
