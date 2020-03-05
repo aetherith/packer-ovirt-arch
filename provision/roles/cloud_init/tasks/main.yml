@@ -1,0 +1,10 @@
+---
+- name: Install packages needed for cloud-init.
+  yay:
+    name: "{{ cloud_init_package_names }}"
+    state: present
+- name: Enable the cloud-init services.
+  service:
+    name: "{{ item }}"
+    enabled: yes
+  loop: "{{ cloud_init_service_names }}"

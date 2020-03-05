@@ -1,0 +1,8 @@
+---
+cloud_init_package_names:
+  - cloud-init
+  - growpart
+cloud_init_service_names:
+  - cloud-init
+  - cloud-final
+cloud_init_conf_dir: /etc/cloud/cloud.cfg.d
