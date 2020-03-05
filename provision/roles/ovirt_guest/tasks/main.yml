@@ -1,0 +1,10 @@
+---
+- name: Install ovirt-guest-agent
+  yay:
+    name: "{{ ovirt_guest_package_name }}"
+    state: present
+- name: Start and enable the service.
+  service:
+    name: "{{ ovirt_guest_service_name }}"
+    enabled: yes
+    state: started

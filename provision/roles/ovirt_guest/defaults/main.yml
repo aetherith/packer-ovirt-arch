@@ -1,0 +1,3 @@
+---
+ovirt_guest_package_name: ovirt-guest-agent
+ovirt_guest_service_name: ovirt-guest-agent

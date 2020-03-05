@@ -1,8 +1,10 @@
 ---
 - name: Provision Image
   hosts: default
-  become: yes
   tasks:
     - name: Install Yay AUR helper
       include_role:
         name: yay
+    - name: Install oVirt Guest Additions
+      include_role:
+        name: ovirt_guest

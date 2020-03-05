@@ -1,18 +1,17 @@
 ---
 - name: Install Yay dependencies.
+  become: yes
   package:
     name: "{{ yay_dependency_package_names }}"
     state: present
 - name: Clone Yay PKDBUILD.
-  become_user: "{{ ansible_user_id }}"
   git:
     repo: "{{ yay_git_repository_url }}"
     dest: "{{ yay_build_dir }}"
     clone: yes
 - name: Build and install Yay.
-  become_user: "{{ ansible_user_id }}"
   command: >
-    makepkg -si
+    makepkg --syncdeps --install --noconfirm --rmdeps
   args:
     chdir: "{{ yay_build_dir }}"
 
