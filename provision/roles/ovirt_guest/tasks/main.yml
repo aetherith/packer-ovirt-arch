@@ -3,7 +3,12 @@
   yay:
     name: "{{ ovirt_guest_package_name }}"
     state: present
+- name: Explicitly load virtio_console module into the kernel.
+  modprobe:
+    name: virtio_console
+    state: present
 - name: Start and enable the service.
+  become: yes
   service:
     name: "{{ ovirt_guest_service_name }}"
     enabled: yes

@@ -5,7 +5,7 @@
         "iso_checksum_url": "https://mirror.arizona.edu/archlinux/iso/{{ isotime \"2006.01\" }}.01/sha1sums.txt",
         "iso_checksum_type": "sha1",
         "ssh_timeout": "20m",
-        "headless": "false",
+        "headless": "true",
         "output_directory": "./build",
         "vm_name": "archlinux-{{ isotime \"2006.01\" }}.01",
         "default_user": "admin",
