@@ -4,6 +4,7 @@
     name: "{{ ovirt_guest_package_name }}"
     state: present
 - name: Explicitly load virtio_console module into the kernel.
+  become: yes
   modprobe:
     name: virtio_console
     state: present
