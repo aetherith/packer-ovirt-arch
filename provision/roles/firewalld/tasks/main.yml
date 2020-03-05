@@ -1,0 +1,17 @@
+---
+- name: Install FirewallD
+  package:
+    name: "{{ firewalld_package_name }}"
+    state: present
+- name: Enable and start FirewallD
+  service:
+    name: "{{ firewalld_service_name }}"
+    enabled: yes
+    state: started
+- name: Add services to FirewallD.
+  firewalld:
+    service: "{{ item }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+  loop: "{{ firewalld_net_services }}"

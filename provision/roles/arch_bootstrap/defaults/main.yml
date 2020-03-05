@@ -8,6 +8,9 @@ arch_bootstrap_keymap: us
 arch_bootstrap_locale: en_US.UTF-8
 arch_bootstrap_timezone: UTC
 arch_bootstrap_default_user: root
+arch_bootstrap_default_user_groups:
+  - wheel
+  - user
 arch_bootstrap_default_user_public_key: ""
 
 # = Disks =====================================================================

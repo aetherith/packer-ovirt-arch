@@ -1,0 +1,7 @@
+---
+firewalld_package_name: firewalld
+firewalld_service_name: firewalld
+firewalld_net_services: "{{ firewalld_default_net_services + firewalld_extra_net_services }}"
+firewalld_default_net_services:
+  - ssh
+firewalld_extra_net_services: []
