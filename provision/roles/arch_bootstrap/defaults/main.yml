@@ -1,4 +1,7 @@
 ---
+# = Flags =====================================================================
+arch_bootstrap_reboot_enabled: yes
+
 # = Configuration =============================================================
 arch_bootstrap_fqdn: archlinux.example.com
 arch_bootstrap_keymap: us

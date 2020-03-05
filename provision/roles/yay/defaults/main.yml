@@ -1,0 +1,5 @@
+---
+yay_git_repository_url: https://aur.archlinux.org/yay.git
+yay_dependency_package_names:
+  - git
+yay_build_dir: /tmp/yay

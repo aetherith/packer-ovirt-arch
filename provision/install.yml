@@ -1,7 +1,8 @@
 ---
 - name: Provision Image
   hosts: default
-  become: true
+  become: yes
   tasks:
-    - debug:
-        msg: "Got Here!"
+    - name: Install Yay AUR helper
+      include_role:
+        name: yay

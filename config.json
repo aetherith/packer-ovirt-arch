@@ -44,13 +44,23 @@
                 "--extra-vars",
                 "arch_bootstrap_default_user={{ user `default_user` }}",
                 "--extra-vars",
-                "arch_bootstrap_default_user_public_key=../srv/{{ user `default_user_public_key` }}"
+                "arch_bootstrap_default_user_public_key=../srv/{{ user `default_user_public_key` }}",
+                "--extra-vars",
+                "arch_bootstrap_reboot_enabled=no"
             ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "/usr/bin/sudo /sbin/shutdown -r 0"
+            ],
+            "expect_disconnect": true
         },
         {
             "type": "ansible",
             "playbook_file": "./provision/install.yml",
-            "user": "{{ user `default_user` }}"
+            "user": "{{ user `default_user` }}",
+            "pause_before": "10s"
         }
     ]
 }

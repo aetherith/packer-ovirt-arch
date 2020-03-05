@@ -38,5 +38,6 @@
     state: unmounted
   loop: "{{ arch_bootstrap_filesystems }}"
 - name: Reboot the system.
+  when: arch_bootstrap_reboot_enabled | bool
   reboot:
     reboot_timeout: 60
