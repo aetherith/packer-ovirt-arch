@@ -4,6 +4,7 @@
     name: "{{ cloud_init_package_names }}"
     state: present
 - name: Enable the cloud-init services.
+  become: yes
   service:
     name: "{{ item }}"
     enabled: yes

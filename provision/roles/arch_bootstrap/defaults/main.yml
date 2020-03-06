@@ -10,7 +10,7 @@ arch_bootstrap_timezone: UTC
 arch_bootstrap_default_user: root
 arch_bootstrap_default_user_groups:
   - wheel
-  - user
+  - users
 arch_bootstrap_default_user_public_key: ""
 
 # = Disks =====================================================================

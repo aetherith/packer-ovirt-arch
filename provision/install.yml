@@ -8,10 +8,13 @@
     - name: Install oVirt Guest Additions
       include_role:
         name: ovirt_guest
-    - name: Install FirewallD
-      become: yes
-      include_role:
-        name: firewalld
     - name: Install cloud-init
       include_role:
         name: cloud_init
+- name: Set up network security.
+  hosts: default
+  become: yes
+  tasks:
+    - name: Install FirewallD
+      include_role:
+        name: firewalld
